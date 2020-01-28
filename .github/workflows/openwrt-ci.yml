@@ -155,11 +155,11 @@ jobs:
           # 无论你想要对固件进行怎样的定制, 都需要且只需要修改 EOF 回环内的内容.
           # 
           # 编译x64固件:
-          # cat >> .config <<EOF
-          # CONFIG_TARGET_mipsel=y
-          # CONFIG_TARGET_mt7621=y
-          # CONFIG_TARGET_Newifi_D2=y
-          # EOF
+          cat >> .config <<EOF
+          CONFIG_TARGET_ramips=y
+          CONFIG_TARGET_ramips_mt7621=y
+          CONFIG_TARGET_ramips_mt7621_DEVICE_d-team_newifi-d2=y
+          EOF
           # 固件压缩:
           # cat >> .config <<EOF
           # CONFIG_TARGET_IMAGES_GZIP=y
@@ -214,7 +214,7 @@ jobs:
           # CONFIG_PACKAGE_luci-app-webadmin=y
           CONFIG_PACKAGE_luci-app-wireguard=y
           # CONFIG_PACKAGE_luci-app-wrtbwmon=y
-          # EOF
+          EOF
           # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
